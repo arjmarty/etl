@@ -13,3 +13,8 @@ This ETL (Extract, Transform, Load) aims to generate data that can be loaded dir
   <li>pandas</li>
   <li>re</li>
 </ul>
+
+### Data Load <br>
+<ul>
+  <li>Flask - this will act as a backend for the visualization data</li>
+</ul>
