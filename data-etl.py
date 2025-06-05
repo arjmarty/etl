@@ -5,6 +5,11 @@ import os
 import sys
 import requests
 
-data = pd.DataFrame()
+#access from other portal
+DATA_URL = os.getenv("URL_HERE")
 
+r = requests.post(DATA_URL, verify=False)
+
+# general data cleaning, manipulation and aggregation scripts here 
+data = pd.DataFrame()
 num = data.count()
