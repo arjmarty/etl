@@ -10,8 +10,8 @@ This ETL (Extract, Transform, Load) aims to generate data that can be loaded dir
 
 ### Data Transformation <br>
 <ul>
-  <li>pandas</li>
-  <li>re</li>
+  <li>pandas - for various data cleaning, transformation and aggregation processes</li>
+  <li>re - python regex library for string cleaning</li>
 </ul>
 
 ### Data Load <br>
