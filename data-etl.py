@@ -12,4 +12,4 @@ r = requests.post(DATA_URL, verify=False)
 
 # general data cleaning, manipulation and aggregation scripts here 
 data = pd.DataFrame()
-num = data.count()
+num = data.count().sort_index(ascending=False).tail()
