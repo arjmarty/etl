@@ -4,8 +4,9 @@ This ETL (Extract, Transform, Load) aims to generate data that can be loaded dir
 ### Data Extraction <br>
 <ul>
   <li>requests - extracting raw data over http</li>
-  <li>json</li>
-  <li>urllib3</li>
+  <li>json</li> 
+  <li>urllib3</li> 
+  <li>certifi</li> - this will generate/ validate the trustworthiness of certificates
 </ul>
 
 ### Data Transformation <br>
@@ -17,4 +18,5 @@ This ETL (Extract, Transform, Load) aims to generate data that can be loaded dir
 ### Data Load <br>
 <ul>
   <li>Flask - this will act as a backend for the visualization data</li>
+  <li>json - will aid the loaded data frometl to flask application </li>
 </ul>
