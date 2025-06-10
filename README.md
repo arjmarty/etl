@@ -4,8 +4,8 @@ This ETL (Extract, Transform, Load) aims to generate data that can be loaded dir
 ### Data Extraction <br>
 <ul>
   <li>requests - extracting raw data over http</li>
-  <li>json</li> 
-  <li>urllib3</li> 
+  <li>json </li> 
+  <li>urllib3 - http client for python</li> 
   <li>certifi</li> - this will generate/ validate the trustworthiness of certificates
 </ul>
 
