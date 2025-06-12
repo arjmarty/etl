@@ -4,12 +4,17 @@ from datetime import timedelta, datetime as dt
 import os
 import sys
 import requests
+import json
+from urllib3 import request
+
+data_url = "https://www.klook.com/search/result/?query=philippines&needQueryIdentification=true&spm=Home.SearchSuggest_LIST&clickId=3573313ca4"
 
 #access from other portal
-DATA_URL = os.getenv("URL_HERE")
+site = requests.post(data_url, verify=True)
 
-r = requests.post(DATA_URL, verify=False)
+site_data = site.json()
+
 
 # general data cleaning, manipulation and aggregation scripts here 
-data = pd.DataFrame()
-num = data.count().sort_index(ascending=False).tail()
+# data = pd.DataFrame()
+# num = data.count().sort_index(ascending=False).tail()
