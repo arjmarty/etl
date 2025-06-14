@@ -5,14 +5,19 @@ import os
 import sys
 import requests
 import json
-from urllib3 import request
+from bs4 import BeautifulSoup
+from urllib import request
 
-data_url = "https://www.klook.com/search/result/?query=philippines&needQueryIdentification=true&spm=Home.SearchSuggest_LIST&clickId=3573313ca4"
 
-#access from other portal
-site = requests.post(data_url, verify=True)
+# url of intended website
+page_url = "https://www.booking.com/"
 
-site_data = site.json()
+#open the page
+raw_page = request.urlopen(page_url)
+
+#create object from the page
+soup = BeautifulSoup(raw_page, 'html5lib')
+
 
 
 # general data cleaning, manipulation and aggregation scripts here 
