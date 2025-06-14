@@ -11,28 +11,23 @@ import time
 
 
 # url of intended website
-page_url = "https://finance.yahoo.com/markets/stocks/most-active/"
+page_url = "https://finance.yahoo.com/markets/world-indices/"
 
-def get_url(page_url):
-    for attempt in range(5):
-        response = requests.get(page_url)
 
-        if response.status_code == 200:
-            return BeautifulSoup(response.content, 'html.parser')
-        elif response == 429:
-            wait_time = 2 ** attempt
-            print(f"Received 429 error. Waiting for {wait_time} seconds before retrying...")
-            time.sleep(wait_time)
-        else:
-            print(f"Error: {response.status_code}")
-            break
+for i in range(10):
+    response = requests.get(page_url)
+
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.content, 'html.parser')
+    elif response.status_code == 429:
+        print(f"Received 429 error. Waiting before retrying")
+        time.sleep(10)
+        continue
+    else:
+        print(f"Error: {response.status_code}")
     
-    return None
+    time.sleep(5)
 
-
-
-#open the page
-soup = get_url(page_url)
 
 print(soup)
 
