@@ -11,26 +11,13 @@ import time
 
 
 # url of intended website
-page_url = "https://finance.yahoo.com/quote/PSEI.PS/history/"
+page_url = "https://cars.mitula.ph/searchC/level1-Camarines+Sur/sort-0/q-naga-city-bicol?req_sgmt=REVTS1RPUDtTRU87U0VSUDs="
 
+response = requests.get(page_url)
 
-def make_request(page_url):
-    retries = 5
-    for i in range(retries):
-        response = requests.get(page_url)
-        if response.status_code == 429:
-            wait_time = 2 ** i  # Exponential backoff
-            print(f"Received 429, waiting for {wait_time} seconds...")
-            time.sleep(wait_time)
-        else:
-            return response
-    return None
+soup = BeautifulSoup(response.content, 'html5lib')
 
-# soup = BeautifulSoup(response.content, 'html5lib')
-
-response = make_request()
-
-print(response)
+print(soup)
 
 
 # general data cleaning, manipulation and aggregation scripts here 
