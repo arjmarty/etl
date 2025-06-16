@@ -11,13 +11,17 @@ import time
 
 
 # url of intended website
-page_url = "https://cars.mitula.ph/searchC/level1-Camarines+Sur/sort-0/q-naga-city-bicol?req_sgmt=REVTS1RPUDtTRU87U0VSUDs="
+page_url1 = "https://cars.mitula.ph/searchC/level1-Camarines+Sur/sort-0/q-naga-city-bicol?req_sgmt=REVTS1RPUDtTRU87U0VSUDs="
+page_url2 = "https://www.fazwaz.ph/house-for-sale/philippines/bicol"
 
-response = requests.get(page_url)
+response1 = requests.get(page_url1)
+response2 = requests.get(page_url2)
 
-soup = BeautifulSoup(response.content, 'html5lib')
+soup1 = BeautifulSoup(response1.content, 'html5lib')
+soup2 = BeautifulSoup(response2.content, 'html5lib')
 
-print(soup)
+print(soup1)
+print(soup2)
 
 
 # general data cleaning, manipulation and aggregation scripts here 
