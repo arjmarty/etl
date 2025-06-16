@@ -11,25 +11,26 @@ import time
 
 
 # url of intended website
-page_url = "https://finance.yahoo.com/markets/world-indices/"
+page_url = "https://finance.yahoo.com/quote/PSEI.PS/history/"
 
 
-for i in range(10):
-    response = requests.get(page_url)
+def make_request(page_url):
+    retries = 5
+    for i in range(retries):
+        response = requests.get(page_url)
+        if response.status_code == 429:
+            wait_time = 2 ** i  # Exponential backoff
+            print(f"Received 429, waiting for {wait_time} seconds...")
+            time.sleep(wait_time)
+        else:
+            return response
+    return None
 
-    if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html5lib')
-    elif response.status_code == 429:
-        print(f"Received 429 error. Waiting before retrying")
-        time.sleep(10)
-        continue
-    else:
-        print(f"Error: {response.status_code}")
-    
-    time.sleep(5)
+# soup = BeautifulSoup(response.content, 'html5lib')
 
+response = make_request()
 
-print(soup)
+print(response)
 
 
 # general data cleaning, manipulation and aggregation scripts here 
