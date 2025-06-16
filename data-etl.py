@@ -18,7 +18,7 @@ for i in range(10):
     response = requests.get(page_url)
 
     if response.status_code == 200:
-        soup = BeautifulSoup(response.content, 'html.parser')
+        soup = BeautifulSoup(response.content, 'html5lib')
     elif response.status_code == 429:
         print(f"Received 429 error. Waiting before retrying")
         time.sleep(10)
