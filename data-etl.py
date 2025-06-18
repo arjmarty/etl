@@ -20,7 +20,10 @@ response2 = requests.get(page_url2)
 soup1 = BeautifulSoup(response1.content, 'html5lib')
 soup2 = BeautifulSoup(response2.content, 'html5lib')
 
-print(soup1)
+text_only1 = soup1.text
+text_only2 = soup2.text
+
+print(text_only1)
 print(soup2)
 
 
