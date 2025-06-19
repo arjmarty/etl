@@ -28,5 +28,5 @@ print(soup2)
 
 
 # general data cleaning, manipulation and aggregation scripts here 
-# data = pd.DataFrame()
-# num = data.count().sort_index(ascending=False).tail()
+data = pd.DataFrame(text_only1)
+num = data.count().sort_index(ascending=False).tail()
