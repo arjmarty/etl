@@ -12,7 +12,7 @@ import time
 
 # url of intended website
 page_url1 = "https://cars.mitula.ph/searchC/level1-Camarines+Sur/sort-0/q-naga-city-bicol?req_sgmt=REVTS1RPUDtTRU87U0VSUDs="
-page_url2 = "https://www.fazwaz.ph/house-for-sale/philippines/bicol"
+page_url2 = "https://checkwithsec.sec.gov.ph/check-with-sec/suspended"
 
 response1 = requests.get(page_url1)
 response2 = requests.get(page_url2)
